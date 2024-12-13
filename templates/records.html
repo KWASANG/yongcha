@@ -37,7 +37,7 @@
         .links a:hover {
             text-decoration: underline;
         }
-        .edit-button {
+        .edit-button, .delete-button {
             background-color: #007BFF;
             color: white;
             border: none;
@@ -45,7 +45,7 @@
             border-radius: 5px;
             cursor: pointer;
         }
-        .edit-button:hover {
+        .edit-button:hover, .delete-button:hover {
             background-color: #0056b3;
         }
     </style>
@@ -56,12 +56,14 @@
         <tr>
             <th>ID</th>
             <th>발송일</th>
+            <th>부서명</th>
             <th>발송자</th>
             <th>차량번호</th>
             <th>목적지</th>
             <th>물품설명</th>
             <th>작성시간</th>
             <th>수정</th>
+            <th>삭제</th>
         </tr>
         {% for row in rows %}
         <tr>
@@ -72,9 +74,15 @@
             <td>{{ row[4] }}</td>
             <td>{{ row[5] }}</td>
             <td>{{ row[6] }}</td>
+            <td>{{ row[7] }}</td>
             <td>
                 <form action="/edit/{{ row[0] }}" method="get" style="display:inline;">
                     <button type="submit" class="edit-button">수정</button>
+                </form>
+            </td>
+            <td>
+                <form action="/delete/{{ row[0] }}" method="post" style="display:inline;" onsubmit="return confirm('정말로 삭제하시겠습니까?');">
+                    <button type="submit" class="delete-button">삭제</button>
                 </form>
             </td>
         </tr>
