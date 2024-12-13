@@ -2,10 +2,7 @@ from flask import Flask, request, render_template, send_file
 import sqlite3
 import pandas as pd
 from io import BytesIO
-from app import app
 
-
-# Flask 애플리케이션 설정
 app = Flask(__name__)
 
 # 데이터베이스 초기화 함수
@@ -85,7 +82,4 @@ def edit_record(record_id):
 # 초기화 실행
 if __name__ == '__main__':
     init_db()
-    # app.run(host='0.0.0.0', debug=True)  # 서버컴용
-    # app.run(debug=True) # 개인컴 테스트용
-    app.run() # 호스팅용 
-
+    app.run()
