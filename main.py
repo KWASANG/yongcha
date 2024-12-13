@@ -3,6 +3,11 @@ import sqlite3
 import pandas as pd
 from io import BytesIO
 
+# 초기화 실행
+if __name__ == '__main__':
+    init_db()
+    app.run()
+
 app = Flask(__name__)
 
 # 데이터베이스 초기화 함수
