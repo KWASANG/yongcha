@@ -78,7 +78,6 @@ def edit_record(record_id):
             record = cur.fetchone()
     return render_template('edit.html', record=record)
 
-
 # 초기화 실행
 if __name__ == '__main__':
     init_db()
