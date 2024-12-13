@@ -7,6 +7,7 @@ def init_db():
         CREATE TABLE IF NOT EXISTS delivery_records (
             ID INTEGER PRIMARY KEY AUTOINCREMENT,
             발송일 DATE,
+            부서명 TEXT,
             발송자 TEXT,
             차량번호 TEXT,
             목적지 TEXT,
