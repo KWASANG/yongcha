@@ -1,0 +1,40 @@
+<!-- templates/edit.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기록 수정</title>
+    <style>
+        /* 위와 동일한 스타일 사용 */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>기록 수정</h2>
+        <form action="/edit/{{ record[0] }}" method="POST">
+            <div class="form-group">
+                <label for="발송일">발송일</label>
+                <input type="date" id="발송일" name="발송일" value="{{ record[1] }}" required>
+            </div>
+            <div class="form-group">
+                <label for="발송자">발송자</label>
+                <input type="text" id="발송자" name="발송자" value="{{ record[2] }}" required>
+            </div>
+            <div class="form-group">
+                <label for="차량번호">차량번호</label>
+                <input type="text" id="차량번호" name="차량번호" value="{{ record[3] }}" required>
+            </div>
+            <div class="form-group">
+                <label for="목적지">목적지</label>
+                <input type="text" id="목적지" name="목적지" value="{{ record[4] }}" required>
+            </div>
+            <div class="form-group">
+                <label for="물품설명">물품설명</label>
+                <textarea id="물품설명" name="물품설명" rows="3" required>{{ record[5] }}</textarea>
+            </div>
+            <button type="submit">수정 완료</button>
+        </form>
+    </div>
+</body>
+</html>

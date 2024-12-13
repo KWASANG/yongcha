@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>용차 발송 대장</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .links {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .links a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #007BFF;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>용차 발송 대장</h1>
+        <form action="/save" method="post">
+            <div class="form-group">
+                <label>발송일</label>
+                <input type="date" name="발송일" required>
+            </div>
+            <div class="form-group">
+                <label>발송자</label>
+                <input type="text" name="발송자" required>
+            </div>
+            <div class="form-group">
+                <label>차량번호</label>
+                <input type="text" name="차량번호" required>
+            </div>
+            <div class="form-group">
+                <label>목적지</label>
+                <input type="text" name="목적지" required>
+            </div>
+            <div class="form-group">
+                <label>물품설명</label>
+                <textarea name="물품설명" rows="3" required></textarea>
+            </div>
+            <button type="submit">저장</button>
+        </form>
+        <div class="links">
+            <a href="/records">발송 기록 보기</a>
+            <a href="/export">CSV 다운로드</a>
+        </div>
+    </div>
+</body>
+</html>
